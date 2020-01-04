@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Authors>Ben Burns</Authors>
+    <Company>Ben Burns</Company>
+    <Description>Common code for WPF apps, configuration, dialogs, MVVM, messagebus</Description>
+    <PackageLicenseFile>COPYING</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/burnsba/BurnsBac.WindowsAppToolkit</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/burnsba/BurnsBac.WindowsAppToolkit</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>wpf, mvvm</PackageTags>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\tolos\code\csharp\BurnsBac.WindowsAppToolkit\BurnsBac.WindowsAppToolkit\BurnsBac.WindowsAppToolkit.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\COPYING">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
