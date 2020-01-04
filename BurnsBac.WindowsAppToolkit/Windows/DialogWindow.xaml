@@ -1,0 +1,83 @@
+﻿<Window x:Class="BurnsBac.WindowsAppToolkit.Windows.DialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BurnsBac.WindowsAppToolkit.Windows"
+        xmlns:vmd="clr-namespace:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs"
+        Name="DialogWindowx"
+        mc:Ignorable="d"
+        Title="{Binding Path=WindowTitle}" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <ContentPresenter Content="{Binding Path=.}">
+                <ContentPresenter.Resources>
+                    <DataTemplate DataType="{x:Type vmd:OkCancelStringDialogWindowViewModel}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            
+                            <TextBlock
+                                Grid.Row="0"
+                                Padding="8"
+                                FontSize="16"
+                                Text="{Binding Path=BodyMessage}"></TextBlock>
+                            <TextBox
+                                Grid.Row="1"
+                                Margin="8,0,8,24"
+                                Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContentPresenter}, Path=DataContext.UserInput, Mode=TwoWay}"></TextBox>
+                        </Grid>
+                    </DataTemplate>
+
+                    <DataTemplate DataType="{x:Type vmd:OkCancelDialogWindowViewModel}">
+                        <TextBlock 
+                            Padding="8"
+                            FontSize="16"
+                            Text="{Binding Path=BodyMessage}"></TextBlock>
+                    </DataTemplate>
+
+                    <DataTemplate DataType="{x:Type vmd:YesNoDialogWindowViewModel}">
+                        <TextBlock
+                            Padding="8"
+                            FontSize="16"
+                            Text="{Binding Path=BodyMessage}"></TextBlock>
+                    </DataTemplate>
+                </ContentPresenter.Resources>
+            </ContentPresenter>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <ContentPresenter Content="{Binding Path=.}">
+                <ContentPresenter.Resources>
+                    <DataTemplate DataType="{x:Type vmd:OkCancelStringDialogWindowViewModel}">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                            <Button Padding="12,3,12,3" Margin="0,0,12,0" Command="{Binding Path=OkCommand}" CommandParameter="{Binding ElementName=DialogWindowx}">Ok</Button>
+                            <Button Padding="12,3,12,3" Command="{Binding Path=CancelCommand}" CommandParameter="{Binding ElementName=DialogWindowx}">Cancel</Button>
+                        </StackPanel>
+                    </DataTemplate>
+                
+                    <DataTemplate DataType="{x:Type vmd:OkCancelDialogWindowViewModel}">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                            <Button Padding="12,3,12,3" Margin="0,0,12,0" Command="{Binding Path=OkCommand}" CommandParameter="{Binding ElementName=DialogWindowx}">Ok</Button>
+                            <Button Padding="12,3,12,3" Command="{Binding Path=CancelCommand}" CommandParameter="{Binding ElementName=DialogWindowx}">Cancel</Button>
+                        </StackPanel>
+                    </DataTemplate>
+                
+                    <DataTemplate DataType="{x:Type vmd:YesNoDialogWindowViewModel}">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                            <Button Padding="12,3,12,3" Margin="0,0,12,0" Command="{Binding Path=YesCommand}" CommandParameter="{Binding ElementName=DialogWindowx}">Yes</Button>
+                            <Button Padding="12,3,12,3" Command="{Binding Path=NoCommand}" CommandParameter="{Binding ElementName=DialogWindowx}">No</Button>
+                        </StackPanel>
+                    </DataTemplate>
+                </ContentPresenter.Resources>
+            </ContentPresenter>
+        </Grid>
+    </Grid>
+</Window>
