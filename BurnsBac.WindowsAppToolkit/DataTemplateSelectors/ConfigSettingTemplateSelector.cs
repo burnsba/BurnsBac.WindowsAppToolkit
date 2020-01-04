@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using BurnsBac.WindowsAppToolkit.HotConfig;
+using BurnsBac.HotConfig;
 using BurnsBac.WindowsAppToolkit.ViewModels;
 
 namespace BurnsBac.WindowsAppToolkit.DataTemplateSelectors

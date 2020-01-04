@@ -12,21 +12,6 @@ namespace BurnsBac.WindowsAppToolkit.ViewModels.Dialogs
     public abstract class DialogWindowViewModelBase
     {
         /// <summary>
-        /// Gets or sets the window title.
-        /// </summary>
-        public string WindowTitle { get; set; }
-        
-        /// <summary>
-        /// Gets or sets the message to show in the dialog.
-        /// </summary>
-        public string BodyMessage { get; set; }
-
-        /// <summary>
-        /// Gets or sets result data to return when dialog is closed.
-        /// </summary>
-        public DialogResult UserDialogResult { get; set; }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="DialogWindowViewModelBase"/> class.
         /// </summary>
         public DialogWindowViewModelBase()
@@ -37,5 +22,20 @@ namespace BurnsBac.WindowsAppToolkit.ViewModels.Dialogs
             WindowTitle = "Dialog";
             BodyMessage = "Message";
         }
+
+        /// <summary>
+        /// Gets or sets the window title.
+        /// </summary>
+        public string WindowTitle { get; set; }
+
+        /// <summary>
+        /// Gets or sets the message to show in the dialog.
+        /// </summary>
+        public string BodyMessage { get; set; }
+
+        /// <summary>
+        /// Gets or sets result data to return when dialog is closed.
+        /// </summary>
+        public DialogResult UserDialogResult { get; set; }
     }
 }

@@ -105,326 +105,6 @@
             Gets or sets id to use.
             </summary>
         </member>
-        <member name="T:BurnsBac.WindowsAppToolkit.Error.InvalidConfiguration">
-            <summary>
-            Exception when reading settings/configuration file.
-            </summary>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.Error.InvalidConfiguration.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:BurnsBac.WindowsAppToolkit.Error.InvalidConfiguration"/> class.
-            </summary>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.Error.InvalidConfiguration.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:BurnsBac.WindowsAppToolkit.Error.InvalidConfiguration"/> class.
-            </summary>
-            <param name="message">Exception message.</param>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.Error.InvalidConfiguration.#ctor(System.String,System.Exception)">
-            <summary>
-            Initializes a new instance of the <see cref="T:BurnsBac.WindowsAppToolkit.Error.InvalidConfiguration"/> class.
-            </summary>
-            <param name="message">Exception message.</param>
-            <param name="innerException">Inner exception.</param>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.Error.InvalidConfiguration.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary>
-            Initializes a new instance of the <see cref="T:BurnsBac.WindowsAppToolkit.Error.InvalidConfiguration"/> class.
-            </summary>
-            <param name="info">SerializationInfo.</param>
-            <param name="context">StreamingContext.</param>
-        </member>
-        <member name="T:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingBase">
-            <summary>
-            Single setting from the settings.json file. This is the UI item base class.
-            </summary>
-        </member>
-        <member name="F:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingBase._settingsItem">
-            <summary>
-            Underlying setting.
-            </summary>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingBase.#ctor(BurnsBac.WindowsAppToolkit.HotConfig.Setting)">
-            <summary>
-            Initializes a new instance of the <see cref="T:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingBase"/> class.
-            </summary>
-            <param name="item">Item source.</param>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingBase.CurrentValue">
-            <inheritdoc />
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingBase.Display">
-            <inheritdoc />
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingBase.InputType">
-            <inheritdoc />
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingBase.IsModified">
-            <summary>
-            Gets or sets a value indicating whether this setting has been changed.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingBase.Key">
-            <inheritdoc />
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingBase.Dispose">
-            <inheritdoc />
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingBase.ToSettingsItem">
-            <summary>
-            Converts back to a json setttings item.
-            </summary>
-            <returns>Underlying setting object.</returns>
-        </member>
-        <member name="T:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingItem">
-            <summary>
-            For a single setting from the settings.json file that can have multiple values, this
-            is a container for one of those multiple values.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingItem.KeyInt">
-            <summary>
-            Gets or sets the primary key, as an int. Optional.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingItem.Key">
-            <summary>
-            Gets or sets the data source key. This (selected value) should end up getting saved as <see cref="P:BurnsBac.WindowsAppToolkit.HotConfig.IConfigSetting.CurrentValue"/>.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingItem.Display">
-            <summary>
-            Gets or sets the display text, e.g., in a combo box.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.ConfigSettingItem.Data">
-            <summary>
-            Gets or sets optional data object associated with this value.
-            </summary>
-        </member>
-        <member name="T:BurnsBac.WindowsAppToolkit.HotConfig.DataSource.IConfigDataProvider">
-            <summary>
-            Interface for skin json settings dropdown source.
-            </summary>
-        </member>
-        <member name="T:BurnsBac.WindowsAppToolkit.HotConfig.DataSource.IConfigDataProviderOnce">
-            <summary>
-            Interface for skin json settings dropdown source. Data is only queried and supplied once.
-            </summary>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.DataSource.IConfigDataProviderOnce.FetchData">
-            <summary>
-            Retrieves data to show end user.
-            </summary>
-            <returns>Key value pairs to be passed to dropdown.</returns>
-        </member>
-        <member name="T:BurnsBac.WindowsAppToolkit.HotConfig.DataSource.IConfigDataProviderPoll">
-            <summary>
-            Interface for skin json settings dropdown source. Data is acquired through some kind of ongoing process. New items
-            are added to the collection as discovered.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.DataSource.IConfigDataProviderPoll.DataItems">
-            <summary>
-            Gets or sets the observable collection of data items.
-            </summary>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.DataSource.IConfigDataProviderPoll.Start">
-            <summary>
-            Begins acquiring data to populate items collection.
-            </summary>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.DataSource.IConfigDataProviderPoll.Stop">
-            <summary>
-            Stops acquiring items to populate collection.
-            </summary>
-        </member>
-        <member name="T:BurnsBac.WindowsAppToolkit.HotConfig.IConfigSetting">
-            <summary>
-            Single setting from the settings.json file. This is the UI item interface.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.IConfigSetting.Key">
-            <summary>
-            Gets settings key name.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.IConfigSetting.Display">
-            <summary>
-            Gets text to show to user.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.IConfigSetting.InputType">
-            <summary>
-            Gets the type of input.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.IConfigSetting.CurrentValue">
-            <summary>
-            Gets or sets the current value.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.IConfigSetting.IsModified">
-            <summary>
-            Gets or sets a value indicating whether the value has changed.
-            </summary>
-        </member>
-        <member name="T:BurnsBac.WindowsAppToolkit.HotConfig.InputTypes">
-            <summary>
-            Skin config supported input types.
-            </summary>
-        </member>
-        <member name="F:BurnsBac.WindowsAppToolkit.HotConfig.InputTypes.Unknown">
-            <summary>
-            Default/unknown.
-            </summary>
-        </member>
-        <member name="F:BurnsBac.WindowsAppToolkit.HotConfig.InputTypes.Textbox">
-            <summary>
-            Textbox.
-            </summary>
-        </member>
-        <member name="F:BurnsBac.WindowsAppToolkit.HotConfig.InputTypes.Dropdown">
-            <summary>
-            Dropdown list.
-            </summary>
-        </member>
-        <member name="T:BurnsBac.WindowsAppToolkit.HotConfig.InputTypesConverter">
-            <summary>
-            Converts <see cref="T:BurnsBac.WindowsAppToolkit.HotConfig.InputTypes"/>.
-            </summary>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.InputTypesConverter.InputTypeToString(BurnsBac.WindowsAppToolkit.HotConfig.InputTypes)">
-            <summary>
-            Converts from <see cref="T:BurnsBac.WindowsAppToolkit.HotConfig.InputTypes"/> to <see cref="T:System.String"/>.
-            </summary>
-            <param name="t">Enum to convert.</param>
-            <returns>String.</returns>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.InputTypesConverter.StringToInputTypes(System.String)">
-            <summary>
-            Converts from <see cref="T:System.String"/> to <see cref="T:BurnsBac.WindowsAppToolkit.HotConfig.InputTypes"/>.
-            </summary>
-            <param name="s">String to convert.</param>
-            <returns>Enum.</returns>
-        </member>
-        <member name="T:BurnsBac.WindowsAppToolkit.HotConfig.Setting">
-            <summary>
-            Single setting from the settings.json file. This is the serializable implementation.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.Setting.Key">
-            <summary>
-            Gets or sets settings key name.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.Setting.Display">
-            <summary>
-            Gets or sets text to show to user.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.Setting.Input">
-            <summary>
-            Gets or sets the type of input.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.Setting.Datasource">
-            <summary>
-            Gets or sets the datasource type name.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.Setting.DatasourceAssembly">
-            <summary>
-            Gets or sets the datasource assembly name.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.Setting.CurrentValue">
-            <summary>
-            Gets or sets the current value.
-            </summary>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.Setting.ToString">
-            <inheritdoc />
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.Setting.Clone">
-            <summary>
-            Creates a copy of the current item.
-            </summary>
-            <returns>Copy.</returns>
-        </member>
-        <member name="T:BurnsBac.WindowsAppToolkit.HotConfig.SettingsCollection">
-            <summary>
-            Parent collection from the settings.json file. This is the serializable implementation.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.SettingsCollection.Items">
-            <summary>
-            Gets or sets list of settings.
-            </summary>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.SettingsCollection.FromFile(System.String)">
-            <summary>
-            Loads settings from file.
-            </summary>
-            <param name="path">Path of file to load.</param>
-            <returns>Parsed settings.</returns>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.SettingsCollection.SaveChanges">
-            <summary>
-            Writes current object back to the settings file.
-            </summary>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.SettingsCollection.ToSettingsDictionary">
-            <summary>
-            Converts settings to dictionary.
-            </summary>
-            <returns>Dictionary of Key,CurrentValue pairs.</returns>
-        </member>
-        <member name="T:BurnsBac.WindowsAppToolkit.HotConfig.TypeResolver">
-            <summary>
-            Core of this library. Instantiates correct hw/ui types from skin xml. Resolves
-            data sources from skin config json.
-            </summary>
-        </member>
-        <member name="F:BurnsBac.WindowsAppToolkit.HotConfig.TypeResolver._configDataProviderTypes">
-            <summary>
-            List of types of known config data providers.
-            </summary>
-        </member>
-        <member name="F:BurnsBac.WindowsAppToolkit.HotConfig.TypeResolver._configDataProvidersLoaded">
-            <summary>
-            Whether or not data providers have already been loaded.
-            </summary>
-        </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.HotConfig.TypeResolver.ConfigDataProvidersDirectory">
-            <summary>
-            Gets or sets directory to load assemblies containg data providers from.
-            </summary>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.TypeResolver.GetConfigDataProviderType(System.String,System.String)">
-            <summary>
-            Resolves type name and assembly name to a type from the list
-            of known data provider types.
-            </summary>
-            <param name="shortTypeName">Type name without assembly or version.</param>
-            <param name="assemblyName">Name of hosting assembly.</param>
-            <returns>Type. First() is called, so this will throw an exception if not found.</returns>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.TypeResolver.CreateConfigDataProviderInstance(System.String,System.String)">
-            <summary>
-            Creates instance of skin data providor source.
-            </summary>
-            <param name="shortTypeName">Type name without assembly or version.</param>
-            <param name="assemblyName">Name of hosting assembly.</param>
-            <returns>New instance of data providor.</returns>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.HotConfig.TypeResolver.LoadConfigDataProviders">
-            <summary>
-            Loads assemblies from specified directory. Looks for items of type <see cref="T:BurnsBac.WindowsAppToolkit.HotConfig.DataSource.IConfigDataProvider"/>.
-            This can only be performed once.
-            </summary>
-        </member>
         <member name="T:BurnsBac.WindowsAppToolkit.Mvvm.CommandHandler">
             <summary>
             Command helper.
@@ -910,6 +590,7 @@
             <summary>
             Helper function for common code. Creates the window and returns result.
             </summary>
+            <param name="vm">View model.</param>
             <param name="windowTitle">Title of window.</param>
             <param name="message">Message to show in window.</param>
             <returns>Result.</returns>
@@ -1158,7 +839,7 @@
             View model for skin config dropdown setting.
             </summary>
         </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.ConfigSettingDropdownViewModel.#ctor(BurnsBac.WindowsAppToolkit.HotConfig.Setting)">
+        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.ConfigSettingDropdownViewModel.#ctor(BurnsBac.HotConfig.Setting)">
             <summary>
             Initializes a new instance of the <see cref="T:BurnsBac.WindowsAppToolkit.ViewModels.ConfigSettingDropdownViewModel"/> class.
             </summary>
@@ -1203,7 +884,7 @@
             View model for skin config textbox setting.
             </summary>
         </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.ConfigSettingTextboxViewModel.#ctor(BurnsBac.WindowsAppToolkit.HotConfig.Setting)">
+        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.ConfigSettingTextboxViewModel.#ctor(BurnsBac.HotConfig.Setting)">
             <summary>
             Initializes a new instance of the <see cref="T:BurnsBac.WindowsAppToolkit.ViewModels.ConfigSettingTextboxViewModel"/> class.
             </summary>
@@ -1259,7 +940,7 @@
         <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.ConfigViewModel.ToString">
             <inheritdoc />
         </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.ConfigViewModel.SettingsItemConverter(BurnsBac.WindowsAppToolkit.HotConfig.Setting)">
+        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.ConfigViewModel.SettingsItemConverter(BurnsBac.HotConfig.Setting)">
             <summary>
             Converts a json setting item to better typed object.
             </summary>
@@ -1269,6 +950,11 @@
         <member name="T:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.DialogWindowViewModelBase">
             <summary>
             Base class for creating dialog windows.
+            </summary>
+        </member>
+        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.DialogWindowViewModelBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.DialogWindowViewModelBase"/> class.
             </summary>
         </member>
         <member name="P:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.DialogWindowViewModelBase.WindowTitle">
@@ -1286,14 +972,14 @@
             Gets or sets result data to return when dialog is closed.
             </summary>
         </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.DialogWindowViewModelBase.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.DialogWindowViewModelBase"/> class.
-            </summary>
-        </member>
         <member name="T:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.OkCancelDialogWindowViewModel">
             <summary>
             Dialog with "ok" and "cancel" buttons.
+            </summary>
+        </member>
+        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.OkCancelDialogWindowViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.OkCancelDialogWindowViewModel"/> class.
             </summary>
         </member>
         <member name="P:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.OkCancelDialogWindowViewModel.CancelCommand">
@@ -1306,20 +992,15 @@
             Gets or sets ok button command.
             </summary>
         </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.OkCancelDialogWindowViewModel.#ctor">
+        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.OkCancelDialogWindowViewModel.CloseWithCancel(BurnsBac.WindowsAppToolkit.Mvvm.ICloseable)">
             <summary>
-            Initializes a new instance of the <see cref="T:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.OkCancelDialogWindowViewModel"/> class.
+            Cancel button command.
             </summary>
+            <param name="c">Window to close (this).</param>
         </member>
         <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.OkCancelDialogWindowViewModel.CloseWithOk(BurnsBac.WindowsAppToolkit.Mvvm.ICloseable)">
             <summary>
             Ok button command.
-            </summary>
-            <param name="c">Window to close (this).</param>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.OkCancelDialogWindowViewModel.CloseWithCancel(BurnsBac.WindowsAppToolkit.Mvvm.ICloseable)">
-            <summary>
-            Cancel button command.
             </summary>
             <param name="c">Window to close (this).</param>
         </member>
@@ -1329,19 +1010,24 @@
             enter text in a textbox.
             </summary>
         </member>
-        <member name="P:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.OkCancelStringDialogWindowViewModel.UserInput">
-            <summary>
-            Gets or sets text that user entered.
-            </summary>
-        </member>
         <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.OkCancelStringDialogWindowViewModel.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.OkCancelStringDialogWindowViewModel"/> class.
             </summary>
         </member>
+        <member name="P:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.OkCancelStringDialogWindowViewModel.UserInput">
+            <summary>
+            Gets or sets text that user entered.
+            </summary>
+        </member>
         <member name="T:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.YesNoDialogWindowViewModel">
             <summary>
             Dialog with "yes" and "no" buttons.
+            </summary>
+        </member>
+        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.YesNoDialogWindowViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.YesNoDialogWindowViewModel"/> class.
             </summary>
         </member>
         <member name="P:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.YesNoDialogWindowViewModel.NoCommand">
@@ -1354,20 +1040,15 @@
             Gets or sets yes button command.
             </summary>
         </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.YesNoDialogWindowViewModel.#ctor">
+        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.YesNoDialogWindowViewModel.CloseWithNo(BurnsBac.WindowsAppToolkit.Mvvm.ICloseable)">
             <summary>
-            Initializes a new instance of the <see cref="T:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.YesNoDialogWindowViewModel"/> class.
+            No button command.
             </summary>
+            <param name="c">Window to close (this).</param>
         </member>
         <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.YesNoDialogWindowViewModel.CloseWithYes(BurnsBac.WindowsAppToolkit.Mvvm.ICloseable)">
             <summary>
             Yes button command.
-            </summary>
-            <param name="c">Window to close (this).</param>
-        </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.YesNoDialogWindowViewModel.CloseWithNo(BurnsBac.WindowsAppToolkit.Mvvm.ICloseable)">
-            <summary>
-            No button command.
             </summary>
             <param name="c">Window to close (this).</param>
         </member>
@@ -1436,7 +1117,7 @@
         </member>
         <member name="T:BurnsBac.WindowsAppToolkit.Windows.DialogWindow">
             <summary>
-            Interaction logic for DialogWindow.xaml
+            Interaction logic for DialogWindow.xaml .
             </summary>
             <summary>
             DialogWindow

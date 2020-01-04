@@ -14,16 +14,6 @@ namespace BurnsBac.WindowsAppToolkit.ViewModels.Dialogs
     public class YesNoDialogWindowViewModel : DialogWindowViewModelBase
     {
         /// <summary>
-        /// Gets or sets no button command.
-        /// </summary>
-        public ICommand NoCommand { get; set; }
-
-        /// <summary>
-        /// Gets or sets yes button command.
-        /// </summary>
-        public ICommand YesCommand { get; set; }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="YesNoDialogWindowViewModel"/> class.
         /// </summary>
         public YesNoDialogWindowViewModel()
@@ -34,14 +24,14 @@ namespace BurnsBac.WindowsAppToolkit.ViewModels.Dialogs
         }
 
         /// <summary>
-        /// Yes button command.
+        /// Gets or sets no button command.
         /// </summary>
-        /// <param name="c">Window to close (this).</param>
-        private void CloseWithYes(ICloseable c)
-        {
-            UserDialogResult.ResultOption = WinformsDialogResult.Yes;
-            c.Close();
-        }
+        public ICommand NoCommand { get; set; }
+
+        /// <summary>
+        /// Gets or sets yes button command.
+        /// </summary>
+        public ICommand YesCommand { get; set; }
 
         /// <summary>
         /// No button command.
@@ -50,6 +40,16 @@ namespace BurnsBac.WindowsAppToolkit.ViewModels.Dialogs
         private void CloseWithNo(ICloseable c)
         {
             UserDialogResult.ResultOption = WinformsDialogResult.No;
+            c.Close();
+        }
+
+        /// <summary>
+        /// Yes button command.
+        /// </summary>
+        /// <param name="c">Window to close (this).</param>
+        private void CloseWithYes(ICloseable c)
+        {
+            UserDialogResult.ResultOption = WinformsDialogResult.Yes;
             c.Close();
         }
     }

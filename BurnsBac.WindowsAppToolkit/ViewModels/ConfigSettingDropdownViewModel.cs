@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
+using BurnsBac.HotConfig;
+using BurnsBac.HotConfig.DataSource;
 using BurnsBac.WindowsAppToolkit.Dto;
-using BurnsBac.WindowsAppToolkit.HotConfig;
-using BurnsBac.WindowsAppToolkit.HotConfig.DataSource;
 
 namespace BurnsBac.WindowsAppToolkit.ViewModels
 {
@@ -32,7 +31,7 @@ namespace BurnsBac.WindowsAppToolkit.ViewModels
             catch (Exception ex)
             {
                 var message = $"Could not resolve datasource. Datasource='{item.Datasource}', DatasourceAssembly='{item.DatasourceAssembly}'.";
-                throw new Error.InvalidConfiguration(message, ex);
+                throw new HotConfig.Error.InvalidConfiguration(message, ex);
             }
 
             var dataProviderType = _dataProvider.GetType();
@@ -56,7 +55,7 @@ namespace BurnsBac.WindowsAppToolkit.ViewModels
             }
             else
             {
-                throw new Error.InvalidConfiguration("Settings dropdown doesn't implement a known interface.");
+                throw new HotConfig.Error.InvalidConfiguration("Settings dropdown doesn't implement a known interface.");
             }
 
             SelectedItem = Items.Where(x => x.Id == CurrentValue).FirstOrDefault();

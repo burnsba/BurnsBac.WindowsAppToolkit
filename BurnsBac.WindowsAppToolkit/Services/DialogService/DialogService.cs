@@ -48,6 +48,7 @@ namespace BurnsBac.WindowsAppToolkit.Services.DialogService
         /// <summary>
         /// Helper function for common code. Creates the window and returns result.
         /// </summary>
+        /// <param name="vm">View model.</param>
         /// <param name="windowTitle">Title of window.</param>
         /// <param name="message">Message to show in window.</param>
         /// <returns>Result.</returns>

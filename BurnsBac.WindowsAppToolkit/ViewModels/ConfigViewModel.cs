@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
-using BurnsBac.WindowsAppToolkit.HotConfig;
+using BurnsBac.HotConfig;
 using BurnsBac.WindowsAppToolkit.Mvvm;
 using BurnsBac.WindowsAppToolkit.Services.MessageBus;
 using BurnsBac.WindowsAppToolkit.Windows;

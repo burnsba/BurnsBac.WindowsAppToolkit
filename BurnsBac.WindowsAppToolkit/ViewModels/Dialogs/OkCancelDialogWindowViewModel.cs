@@ -14,16 +14,6 @@ namespace BurnsBac.WindowsAppToolkit.ViewModels.Dialogs
     public class OkCancelDialogWindowViewModel : DialogWindowViewModelBase
     {
         /// <summary>
-        /// Gets or sets cancel button command.
-        /// </summary>
-        public ICommand CancelCommand { get; set; }
-
-        /// <summary>
-        /// Gets or sets ok button command.
-        /// </summary>
-        public ICommand OkCommand { get; set; }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="OkCancelDialogWindowViewModel"/> class.
         /// </summary>
         public OkCancelDialogWindowViewModel()
@@ -34,14 +24,14 @@ namespace BurnsBac.WindowsAppToolkit.ViewModels.Dialogs
         }
 
         /// <summary>
-        /// Ok button command.
+        /// Gets or sets cancel button command.
         /// </summary>
-        /// <param name="c">Window to close (this).</param>
-        private void CloseWithOk(ICloseable c)
-        {
-            UserDialogResult.ResultOption = WinformsDialogResult.OK;
-            c.Close();
-        }
+        public ICommand CancelCommand { get; set; }
+
+        /// <summary>
+        /// Gets or sets ok button command.
+        /// </summary>
+        public ICommand OkCommand { get; set; }
 
         /// <summary>
         /// Cancel button command.
@@ -50,6 +40,16 @@ namespace BurnsBac.WindowsAppToolkit.ViewModels.Dialogs
         private void CloseWithCancel(ICloseable c)
         {
             UserDialogResult.ResultOption = WinformsDialogResult.Cancel;
+            c.Close();
+        }
+
+        /// <summary>
+        /// Ok button command.
+        /// </summary>
+        /// <param name="c">Window to close (this).</param>
+        private void CloseWithOk(ICloseable c)
+        {
+            UserDialogResult.ResultOption = WinformsDialogResult.OK;
             c.Close();
         }
     }

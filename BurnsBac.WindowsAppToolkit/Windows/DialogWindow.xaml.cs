@@ -15,7 +15,7 @@ using BurnsBac.WindowsAppToolkit.ViewModels.Dialogs;
 namespace BurnsBac.WindowsAppToolkit.Windows
 {
     /// <summary>
-    /// Interaction logic for DialogWindow.xaml
+    /// Interaction logic for DialogWindow.xaml .
     /// </summary>
     public partial class DialogWindow : Window, ICloseable
     {

@@ -17,6 +17,15 @@ namespace BurnsBac.WindowsAppToolkit.ViewModels.Dialogs
         private string _userInput;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="OkCancelStringDialogWindowViewModel"/> class.
+        /// </summary>
+        public OkCancelStringDialogWindowViewModel()
+            : base()
+        {
+            UserDialogResult.ResultType = typeof(string);
+        }
+
+        /// <summary>
         /// Gets or sets text that user entered.
         /// </summary>
         public string UserInput
@@ -31,15 +40,6 @@ namespace BurnsBac.WindowsAppToolkit.ViewModels.Dialogs
                 _userInput = value;
                 UserDialogResult.ResultValue = _userInput;
             }
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OkCancelStringDialogWindowViewModel"/> class.
-        /// </summary>
-        public OkCancelStringDialogWindowViewModel()
-            : base()
-        {
-            UserDialogResult.ResultType = typeof(string);
         }
     }
 }

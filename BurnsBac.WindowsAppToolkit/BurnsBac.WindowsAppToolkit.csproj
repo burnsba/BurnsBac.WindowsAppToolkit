@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWPF>true</UseWPF>
     <Authors>Ben Burns</Authors>
     <Company>Ben Burns</Company>
@@ -12,7 +12,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>wpf, mvvm</PackageTags>
     <PackageReleaseNotes>Initial release</PackageReleaseNotes>
-    <FileVersion>1.1.1.1</FileVersion>
+    <FileVersion>1.2.1.1</FileVersion>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -32,6 +33,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BurnsBac.HotConfig">
+      <HintPath>..\..\staging\BurnsBac.HotConfig.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
