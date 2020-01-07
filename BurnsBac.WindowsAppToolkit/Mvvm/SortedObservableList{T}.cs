@@ -220,7 +220,9 @@ namespace BurnsBac.WindowsAppToolkit.Mvvm
                 if (_itemCompareFunction(item, _items[index]) == -1)
                 {
                     _items.Insert(index, item);
-                    max++;
+                    OnPropertyChanged(CountString);
+                    OnPropertyChanged(IndexerName);
+                    OnCollectionChanged(NotifyCollectionChangedAction.Add, item, index);
                     return;
                 }
             }
