@@ -577,13 +577,14 @@
             <param name="message">Message to show in window.</param>
             <returns>Result.</returns>
         </member>
-        <member name="M:BurnsBac.WindowsAppToolkit.Services.DialogService.DialogService.OpenOkCancelStringDialog(System.String,System.String)">
+        <member name="M:BurnsBac.WindowsAppToolkit.Services.DialogService.DialogService.OpenOkCancelStringDialog(System.String,System.String,System.String)">
             <summary>
             Creates a new dialog with "ok" and "cancel" buttons. The user can also
             enter text in a textbox.
             </summary>
             <param name="windowTitle">Title of window.</param>
             <param name="message">Message to show in window.</param>
+            <param name="defaultValue">Initialize the textbox with this value.</param>
             <returns>Result.</returns>
         </member>
         <member name="M:BurnsBac.WindowsAppToolkit.Services.DialogService.DialogService.DialogCommon(BurnsBac.WindowsAppToolkit.ViewModels.Dialogs.DialogWindowViewModelBase,System.String,System.String)">

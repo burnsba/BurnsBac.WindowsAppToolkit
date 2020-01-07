@@ -7,11 +7,18 @@
         xmlns:vmd="clr-namespace:BurnsBac.WindowsAppToolkit.ViewModels.Dialogs"
         Name="DialogWindowx"
         mc:Ignorable="d"
-        Title="{Binding Path=WindowTitle}" Height="300" Width="300">
+
+        MinHeight="160"
+        MinWidth="350"
+        MaxWidth="700"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterOwner"
+        Title="{Binding Path=WindowTitle}" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="8" />
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -28,10 +35,11 @@
                                 Grid.Row="0"
                                 Padding="8"
                                 FontSize="16"
+                                TextWrapping="WrapWithOverflow"
                                 Text="{Binding Path=BodyMessage}"></TextBlock>
                             <TextBox
                                 Grid.Row="1"
-                                Margin="8,0,8,24"
+                                Margin="8,0,8,14"
                                 Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContentPresenter}, Path=DataContext.UserInput, Mode=TwoWay}"></TextBox>
                         </Grid>
                     </DataTemplate>
@@ -40,6 +48,7 @@
                         <TextBlock 
                             Padding="8"
                             FontSize="16"
+                            TextWrapping="WrapWithOverflow"
                             Text="{Binding Path=BodyMessage}"></TextBlock>
                     </DataTemplate>
 
@@ -47,6 +56,7 @@
                         <TextBlock
                             Padding="8"
                             FontSize="16"
+                            TextWrapping="WrapWithOverflow"
                             Text="{Binding Path=BodyMessage}"></TextBlock>
                     </DataTemplate>
                 </ContentPresenter.Resources>

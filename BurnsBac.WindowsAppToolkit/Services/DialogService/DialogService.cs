@@ -39,10 +39,20 @@ namespace BurnsBac.WindowsAppToolkit.Services.DialogService
         /// </summary>
         /// <param name="windowTitle">Title of window.</param>
         /// <param name="message">Message to show in window.</param>
+        /// <param name="defaultValue">Initialize the textbox with this value.</param>
         /// <returns>Result.</returns>
-        public static DialogResult OpenOkCancelStringDialog(string windowTitle, string message)
+        public static DialogResult OpenOkCancelStringDialog(string windowTitle, string message, string defaultValue = null)
         {
-            return DialogCommon(new OkCancelStringDialogWindowViewModel(), windowTitle, message);
+            var vm = new OkCancelStringDialogWindowViewModel()
+            {
+                WindowTitle = windowTitle,
+                BodyMessage = message,
+                UserInput = defaultValue ?? string.Empty,
+            };
+
+            var d = new Windows.DialogWindow(vm);
+            d.ShowDialog();
+            return vm.UserDialogResult;
         }
 
         /// <summary>

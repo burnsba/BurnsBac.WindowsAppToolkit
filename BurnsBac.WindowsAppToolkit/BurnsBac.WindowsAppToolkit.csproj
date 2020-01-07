@@ -11,9 +11,9 @@
     <RepositoryUrl>https://github.com/burnsba/BurnsBac.WindowsAppToolkit</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>wpf, mvvm</PackageTags>
-    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
-    <FileVersion>1.2.1.1</FileVersion>
-    <Version>1.1.0</Version>
+    <PackageReleaseNotes>Fix NotifyPropertyChange in SortedObservableList{T}.Add. Add default property to OkCancelStringDialogWindowViewModel.</PackageReleaseNotes>
+    <FileVersion>1.2.2.1</FileVersion>
+    <Version>1.1.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
